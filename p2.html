@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>CS430 Project 2</title>
+	</head>
+	<body>
+		<h1>CS430 Project 2:  Filesystem Simulation</h1>
+		<h3>Due Monday, October 13, at 9:00 AM </h3>
+	
+	A hard drive or floppy drive can be viewed as concentric circles called tracks, arranged on platters accessed by heads, and divided into sectors.  In order to specify a particular location on the hard drive, the cylinder, head, and sector must each be specified.  As usual, <a href="http://en.wikipedia.org/wiki/Cylinder-head-sector"> Wikipedia </a> has a thorough explanation including historical perspective, which I encourage you to read. <br>
+	For this project, write a filesystem for a simulated hard drive.  The simulated drive has only one head, so "cylinder" and "track" have the same meaning, and head specification is not required.  Your simulated filesystem must work well enough to pass all the tests in the included tester.c file, but speed and storage efficiency are not required except that the filesystem must be efficient enough to store 300 copies of the test file the test program uses.  The filesystem must store all the information it requires on the simulated hard drive.  This will likely include a file allocation table, a free space table, and the files.  I recommend a file allocation table approach to this problem, but it is not required.<br>
+	Files provided are:
+	<ul>
+		<li> drive.h, header file for the simulated hard drive. </li>
+		<li> drive.c, implementation of the simulated hard drive. </li>
+		<li> fs.h, header file for your filesystem.  Don't change this, because if you do the test program won't work. </li>
+		<li> fs.c, implementation file for your filesystem.  You can change anything in this file, or even spread your implementation over multiple files if you like.  My solution was just over 200 lines, so expect this file to grow significantly. </li>
+		<li> tester.c, contains tests to let you know if your filesystem works yet.  Passing all the tests in this file is considered sufficient debugging for this assignment. </li>
+		<li> Makefile, which you can use to build your program if you like </li>
+	</ul>
+
+	Because nested functions caused problems for OSX users on project 1, they have been avoided in this project.  You are welcome to change the language used provided this can be done without changing tester.c or drive.c.  C++ is the easiest change, but calls into Python and such are certainly possible.  Just remember, it may take longer to figure out how to embed Python into C than to write the project in C from the start.<br>
+
+
+	Grading will be based on the degree to which your solution passes the tests in the test function.  Each function is worth 1/3 of the assignment points.  Full credit will be awarded if your solution passes all tests and works as described above.  <br>
+	The files you will need are contained in a .zip archive in the class examples area, or <a href="http://isoptera.lcsc.edu/~seth/cs430/examples/p2.zip">here</a>.  On Unix-like systems, download the zip file, unpack it using the "unzip" command (unzip p2.zip), enter the "p2" directory, and you can build the program by typing "make".  Alternatively, the project will compile with "gcc -std=c99 drive.c fs.c tester.c".  The project has not been tested in Visual Studio, but will probably work. <br>
+	On Isoptera or any other Linux system with wget installed, you can download the project like this:<br>
+wget isoptera.lcsc.edu/~seth/cs430/examples/p2.zip	
+	</body>
+</html>
